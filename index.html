@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            color: red;
+        }
+        pre{
+            color: green;
+        }
+        li{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <p>1.What is a Temporal Dead Zone?</p>
+    <li>temporal dead zone is a behaviour that occurs with variables used let and const keywords.</li>
+    <li>it is a behaviour we try to acess before its instalization</li>
+    <pre>
+        function tempo(){
+            message="hello tempo"
+            let message
+        }
+        tempo()
+    </pre>
+    <p>2.Write code to explain map and filter in arrays</p>
+    <li>map: map will iterate overall the elements on which it as been used and return new array</li>
+    <pre>
+        let map2=[10,20,30,40]
+       let modified= map2.map(function(element){
+      return element*2
+     })
+     console.log(modified)
+    </pre>
+    <li>filter:it will return new array after checking a condition on each element</li>
+    <pre>
+        let fill=["pavan","nithin"]
+        let c=fill.filter(item=>item=String)
+        console.log(c)
+
+        //or
+        let fill1=[10,20,30]
+        let d=fill1.filter(item=>item>10)
+        console.log(d)        
+    </pre>
+    <p>3.Explain passed by value and passed by reference</p>
+    <li>in js primitative data types are passed by value & non primitative data are passed by refeerence</li>
+    <li>it creates memory for passed by value and it creates location for passed by  reference</li>
+    <pre>
+        //3 passed by value 
+let a=20
+let b=a
+b=a+5;
+console.log(a);
+console.log(b);
+//passed by reference
+let obj1={
+    name:"nithin",
+    age:23
+}
+let obj2=obj1
+obj2.age=24
+console.log(obj1)
+console.log(obj2)
+    </pre>
+    <p>4.What are arrow functions?</p>
+    <li>arrow function is the latest fuction introduced in ES6 version,to write simple & managable code which is easy to debug and understand</li>
+    <pre>
+        let arrow=((x,y)=>{
+            result =x*y
+            return result
+        })
+        let result1=arrow(10,20)
+        console.log(result1)
+    </pre>
+    <p>5.What is the for-in loop in JavaScript? Give its syntax</p>
+    <li>in js for-in loop is used to iterate iver the properties of an object</li>
+    <pre>
+        const person={
+            name:"nithin",
+            age:30,
+            occupation:"engineer"
+         }
+         for(const key in person){
+            console.log(key +":"+person[key])
+         }
+    </pre>
+    <p>6.Fetch API </p>
+    <li>fetch api is modern promise based api for making network request in js </li>
+    <pre>
+  fetch('https://jsonplaceholder.typicode.com/todos/1')
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error(error))
+    </pre>
+    <p>7.what is Symbol?</p>
+    <li>in js ES6 introduced a new primitative data type called symbol symbols are immuatble and unique</li>
+    <pre>
+        const mysym=Symbol()
+        const myobj1={
+        [mysym]:"hello world!"
+        }
+        console.log(myobj1[mysym])
+    </pre>
+    <p>8.What is difference between null and undefined and where to use what?</p>
+    <li>undefined:is a value that automatically assigned to variable that has been declared but not intilazes with valve</li>
+    <li>wherevers the undefined when you want to indicate that the value has not intiliazed</li>
+    <pre>
+        let x;
+function foo(){
+ console.log(x)
+}
+foo()
+    </pre>
+    <li>null:is a value that represnts the intentinally absence of any objct</li>
+    <li>we use null when you want to indicate that the variable has no value</li>
+    <pre>
+        let y= null;
+function poo1(){
+    console.log(y)
+}
+poo1()
+    </pre>
+    <script src="./main.js"></script>
+</body>
+</html>
